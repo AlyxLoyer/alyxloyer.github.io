@@ -450,7 +450,7 @@ h6 {
 }
 
 .credits {
-  font-size: 1rem;
+  font-size: 0.75rem;
 }
 
 ul {
@@ -1427,6 +1427,9 @@ a.disabled {
    header /
    ========================================================================== */
 .header {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
   background-color: var(--color-black);
   padding: 16px 0;
 }
@@ -1663,6 +1666,14 @@ a.disabled {
 }
 .competences .competences__media img {
   border-radius: 32px;
+  aspect-ratio: 588/341;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 100% 35%;
+     object-position: 100% 35%;
+}
+.competences .competences__content {
+  justify-self: center;
 }
 .competences .logiciels {
   padding-top: 32px;
@@ -1692,13 +1703,18 @@ a.disabled {
 }
 
 .swiper-slide {
-  display: flex;
+  display: grid;
+  grid-template-columns: 4fr 3fr;
   align-items: center;
   justify-content: center;
 }
 
 .swiper-pagination {
   position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding-top: 16px;
 }
 
 .swiper-pagination-bullet {
@@ -1727,11 +1743,5 @@ a.disabled {
 
 .swiper-full {
   overflow: visible;
-}
-
-.swiper-pagination {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
 }
 /*# sourceMappingURL=main.css.map */
