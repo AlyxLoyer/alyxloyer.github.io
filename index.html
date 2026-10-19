@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Porfolio ALyx Loyer</title>
+    <title>Porfolio Alyx Loyer</title>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
@@ -19,7 +19,7 @@
 <body>
 
 
-    <div class="header">
+    <div class="header" data-component="Header">
         <div class="wrapper">
 
             <a href="index.html" class="logo">AL</a>
@@ -55,11 +55,17 @@
                 </ul>
             </nav>
 
-            <div class="menu">
-                <hr>
-                <hr>
-                <hr>
-            </div>
+            <!-- <div class="menu js-toggle">
+                    <hr>
+                    <hr>
+                    <hr>
+                </div> -->
+
+            <button class="menu js-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
             <ul class="reseaux">
                 <li>
@@ -106,6 +112,86 @@
                 </li>
             </ul>
 
+
+        </div>
+    </div>
+
+    <!-- Modale Header Mobile -->
+    <div class="modale header">
+        <div class="wrapper">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#"><svg class="icon ">
+                                <use href="#icon-star"></use>
+                            </svg> Accueil</a>
+                    </li>
+
+                    <li>
+                        <a href="#projets"><svg class="icon">
+                                <use href="#icon-star"></use>
+                            </svg> Projets</a>
+                    </li>
+
+                    <li>
+                        <a href="#aPropos"><svg class="icon">
+                                <use href="#icon-star"></use>
+                            </svg> À propos</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact"><svg class="icon">
+                                <use href="#icon-star"></use>
+                            </svg> Contact</a>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <ul class="reseaux">
+                <li>
+                    <a href="https://www.behance.net/alyxloyer">
+                        <svg class="icon icon--lg">
+                            <use href="#icon-behance"></use>
+                        </svg>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.linkedin.com/in/alyx-loyer-12a918399/">
+                        <svg class="icon icon--lg">
+                            <use href="#icon-linkedin"></use>
+                        </svg>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://https://www.artstation.com/alyxloyer">
+                        <svg class="icon icon--lg">
+                            <use href="#icon-artStation"></use>
+                        </svg>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://youtube.com/@alyxloyer?si=kHt--yHxKV-H7eU7">
+                        <svg class="icon icon--lg">
+                            <use href="#icon-youtube"></use>
+                        </svg>
+                        DemoReel
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <svg class="icon icon--lg">
+                            <use href="#icon-pdf"></use>
+
+                        </svg>
+                        CV
+                    </a>
+                </li>
+            </ul>
 
         </div>
     </div>

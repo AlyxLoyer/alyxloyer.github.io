@@ -1432,11 +1432,13 @@ a.disabled {
    header /
    ========================================================================== */
 .header {
-  position: fixed;
+  position: sticky;
+  top: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 5;
   background-color: var(--color-black);
   padding: 16px 0;
+  transition: transform 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .header .wrapper {
   display: flex;
@@ -1471,35 +1473,75 @@ a.disabled {
   font-size: 0.88rem;
 }
 .header .menu {
-  display: none;
-  flex-direction: column;
-  gap: 8px;
+  --bar-height: 3px;
+  --bar-width: 30px;
+  --bar-spacer: 6px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  width: var(--bar-width);
+  height: var(--bar-width);
+  z-index: 10;
 }
-.header .menu hr {
-  width: 30px;
-  height: 2px;
-  margin: 0;
-  background-color: var(--color-white);
-  border-radius: 32px;
+.header .menu span {
+  background: var(--color-white);
+  border-radius: 3px;
+  height: var(--bar-height);
+  width: 100%;
+  position: absolute;
+  transition: 0.3s all ease-out;
+  top: calc(50% - var(--bar-height) / 2);
+  left: calc(50% - var(--bar-width) / 2);
+}
+.header .menu span:nth-child(1) {
+  top: calc(50% - var(--bar-height) / 2 - var(--bar-height) - var(--bar-spacer));
+}
+.header .menu span:nth-child(3) {
+  top: calc(50% - var(--bar-height) / 2 + var(--bar-height) + var(--bar-spacer));
+}
+.header .menu {
+  display: none;
+}
+.header {
+  /*
+     Responsive
+     ========================================================================== */
 }
 @media (width <= 1024px) {
   .header .menu {
     display: flex;
   }
-  .header .reseaux {
-    display: none;
-  }
-}
-@media (width <= 768px) {
-  .header .menu {
-    display: flex;
-  }
-  .header .reseaux {
-    display: none;
-  }
+  .header .reseaux,
   .header nav {
     display: none;
   }
+}
+.header {
+  /*
+     Composante Header
+     ========================================================================== */
+}
+.header-is-hidden.is-scrolling-down:not(.nav-is-active) .header {
+  transform: translateY(-100%);
+}
+.header .menu {
+  transition: 0.3s all ease-out;
+}
+.nav-is-active .header .menu span {
+  background-color: var(--color-primary);
+  top: calc(50% - var(--bar-height) / 2);
+}
+.nav-is-active .header .menu span:nth-child(1) {
+  transform: rotate(45deg);
+}
+.nav-is-active .header .menu span:nth-child(2) {
+  transform: scaleX(0);
+}
+.nav-is-active .header .menu span:nth-child(3) {
+  transform: rotate(-45deg);
 }
 
 /* ==========================================================================
@@ -1867,5 +1909,39 @@ a.disabled {
 
 .swiper-full {
   overflow: visible;
+}
+
+/* ==========================================================================
+   modale / 
+   ========================================================================== */
+.modale.header {
+  transform: translateY(-100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  padding: 96px;
+  transition: 0.3s all ease-out;
+}
+.modale.header .wrapper {
+  flex-direction: column;
+}
+.modale.header .wrapper ul {
+  flex-direction: column;
+}
+.modale.header .wrapper .reseaux {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (width <= 1024px) {
+  .modale.header .reseaux,
+  .modale.header nav {
+    display: flex;
+  }
+}
+.nav-is-active .modale.header {
+  transform: translateY(0);
 }
 /*# sourceMappingURL=main.css.map */
