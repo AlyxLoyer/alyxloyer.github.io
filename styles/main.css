@@ -458,6 +458,10 @@ ul {
   list-style-type: "  ✧  ";
 }
 
+.copyright {
+  font-size: 1rem;
+}
+
 /* ==========================================================================
    LINKS / ELEMENTS
    Style de base de tous les liens et bouton du site
@@ -1522,21 +1526,37 @@ a.disabled {
 .footer a:hover {
   color: var(--color-primary);
 }
-
-.infos-footer {
+.footer .infos-footer {
   margin-top: 64px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 48px 90px;
   width: 50%;
 }
-.infos-footer .reseaux {
+.footer .infos-footer .reseaux {
   width: -moz-fit-content;
   width: fit-content;
 }
-
-.copyright {
+.footer .copyright {
   grid-column: 1/3;
+}
+@media (width <= 768px) {
+  .footer {
+    text-align: center;
+  }
+  .footer .stage {
+    width: 100%;
+  }
+  .footer .infos-footer {
+    grid-template-columns: 1fr;
+    width: 100%;
+    justify-items: center;
+  }
+}
+@media (width <= 375px) {
+  .footer .copyright {
+    grid-column: unset;
+  }
 }
 
 /* ==========================================================================
